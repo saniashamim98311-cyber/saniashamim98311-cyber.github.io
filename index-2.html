@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sania Shamim | Frontend Developer</title>
+<meta name="description" content="Sania Shamim is a BCA student and frontend developer. See her live projects: a lab price comparison app and a weather app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f7; --surface:#ffffff; --ink:#16213a; --muted:#51607c;
+  --line:#cfd8e6; --accent:#2446d6; --accent-ink:#ffffff;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1626; --surface:#17203a; --ink:#e8edf8; --muted:#a3b0cc;
+    --line:#2b3757; --accent:#7f9bff; --accent-ink:#0f1626;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:400 1.0625rem/1.65 var(--body);
+  padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);
+}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:4px}
+.wrap{max-width:46rem; margin:0 auto; padding:0 1.25rem}
+
+/* Hero */
+.hero{padding:4.5rem 0 3rem; animation:rise .7s ease-out both}
+@keyframes rise{from{opacity:0; transform:translateY(14px)}to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){.hero{animation:none} html{scroll-behavior:auto}}
+h1{
+  font:800 clamp(3rem,13vw,6rem)/.95 var(--head);
+  letter-spacing:-.035em; margin:0 0 1.25rem;
+}
+.role{font:500 1.25rem/1.4 var(--head); margin:0 0 .75rem}
+.intro{max-width:34rem; color:var(--muted); margin:0 0 1.75rem}
+.links{display:flex; flex-wrap:wrap; gap:.6rem}
+.pill{
+  display:inline-block; padding:.6rem 1.1rem; border:1.5px solid var(--ink);
+  border-radius:999px; text-decoration:none; font-weight:500; min-height:44px;
+}
+.pill:hover{background:var(--ink); color:var(--bg)}
+.pill.solid{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+.pill.solid:hover{filter:brightness(1.1); background:var(--accent); color:var(--accent-ink)}
+
+/* Sections */
+section{padding:2.5rem 0; border-top:1px solid var(--line)}
+h2{font:800 1.75rem/1.2 var(--head); letter-spacing:-.02em; margin:0 0 1.5rem}
+.project{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:1.5rem; margin-bottom:1.25rem;
+}
+.project h3{font:800 1.5rem/1.2 var(--head); letter-spacing:-.02em; margin:0 0 .5rem}
+.project p{margin:0 0 1rem; color:var(--muted)}
+.project ul{margin:0 0 1.25rem; padding-left:1.2rem}
+.project li{margin-bottom:.25rem}
+.stack{font-size:.95rem; color:var(--muted); margin-bottom:1.25rem !important}
+.stack strong{color:var(--ink); font-weight:500}
+.skills{display:flex; flex-wrap:wrap; gap:.5rem; padding:0; margin:0; list-style:none}
+.skills li{border:1px solid var(--line); background:var(--surface); border-radius:8px; padding:.4rem .8rem}
+.contact p{max-width:34rem; color:var(--muted); margin:0 0 1.25rem}
+footer{padding:2rem 0 3rem; color:var(--muted); font-size:.95rem; border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <h1>Sania Shamim</h1>
+    <p class="role">Frontend developer and BCA student</p>
+    <p class="intro">I build fast, mobile-friendly web apps with HTML, CSS and JavaScript. I'm looking for a frontend internship where I can work on real products and learn from a team.</p>
+    <div class="links">
+      <a class="pill solid" href="#projects">See my projects</a>
+      <a class="pill" href="https://github.com/saniashamim98311-cyber">GitHub</a>
+      <a class="pill" href="https://www.linkedin.com/in/sania-shamim-856867389">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <h3>Lab Aggregator</h3>
+      <p>Search for a lab test, enter your pincode, and compare prices across providers in one list.</p>
+      <ul>
+        <li>Shows single tests and health packages that include the test you searched</li>
+        <li>Sorts results by total price: offer price plus home collection fee</li>
+        <li>Mobile-friendly cards with MRP strikethrough, price breakdown and NABL badge</li>
+      </ul>
+      <p class="stack"><strong>Built with:</strong> HTML, CSS, JavaScript, Node.js serverless API, Vercel</p>
+      <div class="links">
+        <a class="pill solid" href="https://lab-aggregator.vercel.app/">Open live demo</a>
+        <a class="pill" href="https://github.com/saniashamim98311-cyber/lab-aggregator">View code</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <h3>Advanced Weather App</h3>
+      <p>Type a city or use your location to see live weather, with a background that changes to match the conditions.</p>
+      <ul>
+        <li>Shows temperature, humidity, wind, UV index and air quality</li>
+        <li>Remembers your recent searches</li>
+        <li>Responsive layout that works on phones and desktops</li>
+      </ul>
+      <p class="stack"><strong>Built with:</strong> HTML, CSS, JavaScript, WeatherAPI, GitHub Pages</p>
+      <div class="links">
+        <a class="pill solid" href="https://saniashamim98311-cyber.github.io/Weather-app/">Open live demo</a>
+        <a class="pill" href="https://github.com/saniashamim98311-cyber/Weather-app">View code</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Responsive design</li>
+      <li>REST APIs</li><li>Node.js</li><li>Git and GitHub</li><li>Vercel</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>I'm open to frontend internships, remote or on-site. The fastest way to reach me is email.</p>
+    <div class="links">
+      <a class="pill solid" href="mailto:saniashamim.98311@gmail.com">Email me</a>
+      <a class="pill" href="https://www.linkedin.com/in/sania-shamim-856867389">Message on LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap">&copy; 2026 Sania Shamim</div>
+</footer>
+</body>
+</html>
